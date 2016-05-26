@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.yc.ssh.admin.base.mybatis.mapper.RoleResourceMapper" >
+  <resultMap id="BaseResultMap" type="cn.yc.ssh.admin.base.mybatis.model.RoleResource" >
+    <id column="ROLE_ID" property="roleId" jdbcType="DECIMAL" />
+    <id column="RESOURCE_ID" property="resourceId" jdbcType="DECIMAL" />
+    <result column="STATE" property="state" jdbcType="DECIMAL" />
+    <result column="CREATE_PERSION" property="createPersion" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="DATE" />
+    <result column="UPDATE_PERSON" property="updatePerson" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ROLE_ID, RESOURCE_ID, STATE, CREATE_PERSION, CREATE_TIME, UPDATE_PERSON, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResourceKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_ROLE_RESOURCE
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+      and RESOURCE_ID = #{resourceId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResourceKey" >
+    delete from SYS_ROLE_RESOURCE
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+      and RESOURCE_ID = #{resourceId,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByRole" parameterType="java.lang.Long" >
+    delete from SYS_ROLE_RESOURCE
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResource" >
+    insert into SYS_ROLE_RESOURCE (ROLE_ID, RESOURCE_ID, STATE, 
+      CREATE_PERSION, CREATE_TIME, UPDATE_PERSON, 
+      UPDATE_TIME)
+    values (#{roleId,jdbcType=DECIMAL}, #{resourceId,jdbcType=DECIMAL}, #{state,jdbcType=DECIMAL}, 
+      #{createPersion,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{updatePerson,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into SYS_ROLE_RESOURCE (ROLE_ID, RESOURCE_ID)
+    <foreach close=")" collection="list" item="item" index="index" open="(" separator="union"> 
+select
+	  #{item.roleId,jdbcType=DECIMAL}, #{item.resourceId,jdbcType=DECIMAL} from dual
+	</foreach>
+	</insert>
+  <insert id="insertSelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResource" >
+    insert into SYS_ROLE_RESOURCE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        ROLE_ID,
+      </if>
+      <if test="resourceId != null" >
+        RESOURCE_ID,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="createPersion != null" >
+        CREATE_PERSION,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updatePerson != null" >
+        UPDATE_PERSON,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        #{roleId,jdbcType=DECIMAL},
+      </if>
+      <if test="resourceId != null" >
+        #{resourceId,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=DECIMAL},
+      </if>
+      <if test="createPersion != null" >
+        #{createPersion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updatePerson != null" >
+        #{updatePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResource" >
+    update SYS_ROLE_RESOURCE
+    <set >
+      <if test="state != null" >
+        STATE = #{state,jdbcType=DECIMAL},
+      </if>
+      <if test="createPersion != null" >
+        CREATE_PERSION = #{createPersion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updatePerson != null" >
+        UPDATE_PERSON = #{updatePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+      and RESOURCE_ID = #{resourceId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.yc.ssh.admin.base.mybatis.model.RoleResource" >
+    update SYS_ROLE_RESOURCE
+    set STATE = #{state,jdbcType=DECIMAL},
+      CREATE_PERSION = #{createPersion,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      UPDATE_PERSON = #{updatePerson,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+      and RESOURCE_ID = #{resourceId,jdbcType=DECIMAL}
+  </update>
+</mapper>

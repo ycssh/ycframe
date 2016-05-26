@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.yc.ssh.admin.base.mybatis.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.yc.ssh.admin.base.mybatis.model.User" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="ORGANIZATION_ID" property="organizationId" jdbcType="INTEGER" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="SALT" property="salt" jdbcType="VARCHAR" />
+    <result column="LOCKED" property="locked" jdbcType="INTEGER" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="CREATE_PERSION" property="createPersion" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="DATE" />
+    <result column="UPDATE_PERSON" property="updatePerson" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, ORGANIZATION_ID, PHONE, PASSWORD, SALT, LOCKED, USERNAME, CREATE_PERSION, 
+    CREATE_TIME, UPDATE_PERSON, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_USER
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="findByUsername" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_USER
+        	where username = #{username,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="select" resultMap="BaseResultMap" parameterType="cn.yc.ssh.admin.base.mybatis.model.User" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_USER
+    <where>
+   	  	<if test="organizationId != null" >
+        	and ORGANIZATION_ID=#{organizationId,jdbcType=INTEGER}
+    	</if>
+   	  	<if test="name != null and name!=''" >
+   	  		<bind name="pattern" value="'%' + _parameter.name + '%'" />
+        	and name like #{pattern,jdbcType=VARCHAR}
+    	</if>
+   	  	<if test="username != null and username!=''" >
+        	and username = #{username,jdbcType=VARCHAR}
+    	</if>
+    </where>
+  </select>
+  
+  <select id="selectCount" resultType="java.lang.Integer" parameterType="cn.yc.ssh.admin.base.mybatis.model.User" >
+    select 
+    count(*)
+    from SYS_USER
+    <where>
+   	  	<if test="organizationId != null" >
+        	and organizationId=#{organizationId,jdbcType=INTEGER}
+    	</if>
+   	  	<if test="name != null" >
+   	  		<bind name="pattern" value="'%' + _parameter.name + '%'" />
+        	and name like #{name,jdbcType=VARCHAR}
+    	</if>
+    </where>
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from SYS_USER
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.yc.ssh.admin.base.mybatis.model.User"  useGeneratedKeys="true" keyProperty="id" >
+  		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id"> 
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    insert into SYS_USER (id,NAME, ORGANIZATION_ID, 
+      PHONE, PASSWORD, SALT, 
+      LOCKED, USERNAME, CREATE_PERSION, 
+      CREATE_TIME, UPDATE_PERSON, UPDATE_TIME
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{organizationId,jdbcType=INTEGER}, 
+      #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, 
+      #{locked,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{createPersion,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{updatePerson,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.User"   useGeneratedKeys="true" keyProperty="id">
+   		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS ID
+        </selectKey>
+    insert into SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="organizationId != null" >
+        ORGANIZATION_ID,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="salt != null" >
+        SALT,
+      </if>
+      <if test="locked != null" >
+        LOCKED,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="createPersion != null" >
+        CREATE_PERSION,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updatePerson != null" >
+        UPDATE_PERSON,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationId != null" >
+        #{organizationId,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null" >
+        #{locked,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="createPersion != null" >
+        #{createPersion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updatePerson != null" >
+        #{updatePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.User" >
+    update SYS_USER
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationId != null" >
+        ORGANIZATION_ID = #{organizationId,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        SALT = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null" >
+        LOCKED = #{locked,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="createPersion != null" >
+        CREATE_PERSION = #{createPersion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updatePerson != null" >
+        UPDATE_PERSON = #{updatePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.yc.ssh.admin.base.mybatis.model.User" >
+    update SYS_USER
+    set NAME = #{name,jdbcType=VARCHAR},
+      ORGANIZATION_ID = #{organizationId,jdbcType=INTEGER},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=VARCHAR},
+      LOCKED = #{locked,jdbcType=INTEGER},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      CREATE_PERSION = #{createPersion,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      UPDATE_PERSON = #{updatePerson,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

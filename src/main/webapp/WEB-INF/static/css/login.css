@@ -1,0 +1,694 @@
+
+@charset "utf-8";
+body, button, input, select, textarea {
+    font: 12px/1.125 宋体,Arial,Helvetica,sans-serif;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0 none;
+}
+caption, th {
+    text-align: left;
+}
+input, button, select, textarea {
+    font-family: verdana;
+    outline: medium none;
+}
+.clearfix {
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: none;
+}
+.mailLoginBox {
+    min-width: 936px;
+}
+.mailLoginBox .mailLogin {
+    height: 591px;
+    left: 0;
+    margin-top: -295px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.header {
+    height: 70px;
+    margin: 0 auto;
+    width: 936px;
+}
+.header h1 {
+    float: left;
+    margin-top: 17px;
+}
+.header .logo {
+    background: url("../images/logo.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: left;
+    height: 41px;
+    line-height: 9999px;
+    overflow: hidden;
+    width: 144px;
+}
+.header .nav {
+    float: right;
+    margin-top: 39px;
+}
+.header .nav a {
+    color: #666666;
+}
+.header .nav span {
+    color: #999999;
+    padding: 0 8px;
+}
+.mainHeader {
+    width: 100%;
+}
+.main {
+    height: 485px;
+    margin: 0 auto;
+}
+.mainFooter {
+    width: 100%;
+}
+.main .positionBox {
+    margin: 0 auto;
+    padding-top: 48px;
+    width: 936px;
+}
+.main .loginBox {
+    border-radius: 5px 5px 5px 5px;
+    float: right;
+}
+.main .loginBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 3px 3px 5px #E5E5E5;
+    width: 334px;
+}
+.main .loginBox .tit {
+    margin-bottom: 10px;
+    width: 336px;
+}
+.main .loginBox .tit li {
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #E3E3E3;
+    float: left;
+    height: 42px;
+    text-align: center;
+    width: 166px;
+}
+.main .loginBox .tit li a {
+    color: #333333;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 14px;
+    padding: 14px 0;
+    text-decoration: none;
+    width: 166px;
+}
+.main .loginBox .tit li a .vip {
+    background: url("../images/icon.png") no-repeat scroll 0 -120px transparent;
+    display: inline-block;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: -2px;
+    width: 21px;
+}
+.main .loginBox .tit .current {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+.main .loginBox .freeMailbox, .main .loginBox .vipMailbox {
+    padding: 0 32px;
+    width: 270px;
+}
+.main .loginBox .loginError {
+    color: #E32929;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+}
+.safeTip {
+    background-color: #FEFEC1;
+    border: 1px solid #D9CCB4;
+    color: #666666;
+    line-height: 18px;
+    margin-top: 6px;
+    padding: 4px 12px 2px 8px;
+}
+.main .loginBox .username, .main .loginBox .password, .main .loginBox .vsn {
+    border: 1px solid #C8C8C8;
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    height: 34px;
+    ime-mode: disabled;
+    line-height: 34px;
+    padding-left: 8px;
+    padding-right: 18px;
+    width: 242px;
+}
+.main .loginBox .passwordBox {
+    clear: both;
+    position: relative;
+}
+.main .loginBox .mailvsn {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+.main .loginBox .mailvsn {
+    height: 36px;
+    margin-top: 22px;
+    width: 100%;
+}
+.main .loginBox .loginSetting {
+    height: 22px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+.main .loginBox .loginSetting .forgetPas {
+    color: #7697C4;
+    float: right;
+}
+.main .loginBox .loginSetting input {
+    vertical-align: -3px;
+}
+.main .loginBox .loginSetting span {
+    color: #666666;
+}
+.main .loginBox .loginOrRegister {
+    margin-top: 15px;
+    text-align: right;
+}
+.main .loginBox .loginOrRegister .loginBtn {
+    background: url("../images/icon.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 33px;
+    line-height: 9999px;
+    overflow: hidden;
+    width: 96px;
+}
+.main .loginBox .loginOrRegister .loginBtn:hover {
+    background-position: 0 -33px;
+}
+.main .loginBox .loginOrRegister .loginBtn:active {
+    background-position: 0 -66px;
+}
+.main .loginBox .loginOrRegister .loginBtnload, .main .loginBox .loginOrRegister .loginBtnload:hover, .main .loginBox .loginOrRegister .loginBtnload:active {
+    background: url("../images/loginloading.gif") no-repeat scroll 0 0 transparent;
+}
+.main .loginBox .loginOrRegister span {
+    color: #999999;
+    line-height: 33px;
+    margin-right: 10px;
+}
+.main .loginBox .loginOrRegister span a {
+    color: #7697C4;
+}
+.main .loginBox .loginOrRegister p b {
+    color: #999999;
+    font-weight: normal;
+}
+.main .loginBox .loginOrRegister p {
+    height: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+    text-align: left;
+}
+.main .loginBox .loginOrRegister p a {
+    color: #7697C4;
+}
+.main .loginBox .usernameBox {
+    height: 36px;
+    position: relative;
+    width: 270px;
+}
+.main .loginBox .focus input {
+    border: 1px solid #6B9BDC;
+    box-shadow: 0 0 3px #6B9BDC inset;
+}
+.main .loginBox .focus label {
+    color: #CCCCCC;
+}
+.main .loginBox .hover {
+    border: 1px solid #ABCFF3;
+    box-shadow: 0 0 3px #ABCFF3 inset;
+}
+.main .loginBox .usernameBox .clearname {
+    background: url("../images/icon.png") no-repeat scroll 0 -200px transparent;
+    display: block;
+    height: 9px;
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 9px;
+}
+.main .loginBox .placeholder {
+    color: #999999;
+    cursor: text;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    left: 0;
+    line-height: 34px;
+    padding-left: 11px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+.main .loginBox .vipMailbox .usernameBox span, .main .loginBox .vipMailbox .mailvsn span {
+    font-family: verdana;
+    font-weight: bold;
+}
+.main .loginBox .vipMailbox .usernameBox .clearname {
+    right: 122px;
+}
+.main .loginBox .vipMailbox .username, .main .loginBox .vipMailbox .vsn {
+    float: left;
+    ime-mode: disabled;
+    width: 130px;
+}
+.main .loginBox .vipMailbox .vsn {
+    width: 130px;
+}
+.main .loginBox .vipMailbox .vipDomain {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F9F9F9;
+    border-color: #C8C8C8 #C8C8C8 #C8C8C8 -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0;
+    color: #333333;
+    float: left;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    width: 110px;
+}
+.main .loginBox .vipMailbox .vipDomain a {
+    color: #7697C4;
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+}
+.main .loginBox .vipMailbox .vipDomain a:hover {
+    text-decoration: none;
+}
+.main .loginBox .vipMailbox .loginSetting .forgetPas {
+    color: #7697C4;
+}
+.main .loginBox .vipMailbox .loginOrRegister p a.pay {
+    background: url("../images/icon.png") no-repeat scroll 0 -160px transparent;
+    color: #7697C4;
+    display: inline-block;
+    padding-left: 18px;
+}
+.main .loginBox .vipError, .main .loginBox .freeError {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 4px 0 2px;
+}
+.main .loginBox .checkcodeBox {
+    margin-top: 5px;
+    position: relative;
+}
+.main .loginBox .checkcodeBox input {
+    border: 1px solid #C8C8C8;
+    color: #999999;
+    float: left;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 8px;
+    width: 142px;
+}
+.main .loginBox .checkcodeBox img {
+    border: 1px solid #C8C8C8;
+    float: right;
+    vertical-align: bottom;
+}
+.main .loginBox .checkcodeBox p {
+    color: #666666;
+    height: 20px;
+    line-height: 20px;
+}
+.main .loginBox .checkcodeBox a {
+    color: #7697C4;
+    float: right;
+}
+.main .loginBox .checkcodeBox .focus input {
+    border: 1px solid #6B9BDC;
+    box-shadow: 0 0 3px #6B9BDC inset;
+}
+.main .loginBox .checkcodeBox .focus label {
+    color: #CCCCCC;
+}
+.main .loginBox .checkcodeBox .hover {
+    border: 1px solid #ABCFF3;
+    box-shadow: 0 0 3px #ABCFF3 inset;
+}
+.main .loginBox .loginFooter {
+    border-top: 1px solid #E9EEED;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: -32px;
+    margin-top: 12px;
+    padding: 12px 0 12px 32px;
+    width: 302px;
+}
+.main .loginBox .loginFooter p {
+    height: 20px;
+    line-height: 20px;
+}
+.main .loginBox .loginFooter a {
+    color: #FF0000;
+    font-weight: bold;
+    margin-right: 11px;
+    text-decoration: none;
+}
+.main .loginBox .loginFooter a:hover {
+    text-decoration: underline;
+}
+.main .loginBox .loginFooter span {
+    color: #999999;
+}
+.footerBox {
+    background-color: #FFFFFF;
+    height: 36px;
+    width: 100%;
+}
+.footer {
+    height: 36px;
+    line-height: 36px;
+    margin: 0 auto;
+    text-align: right;
+    width: 936px;
+}
+.footer p {
+    color: #999999;
+    float: left;
+}
+.footer a, .footer span {
+    color: #666666;
+}
+.footer span {
+    margin: 0 7px;
+}
+.autocomplete {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 white;
+    border-color: -moz-use-text-color #C1C1C1 #C1C1C1;
+    border-image: none;
+    border-right: 1px solid #C1C1C1;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    display: none;
+    font-family: verdana;
+    z-index: 10;
+}
+.autocomplete div {
+    font-size: 14px;
+    padding: 4px 8px;
+}
+.autocomplete .active {
+    background: none repeat scroll 0 0 #33CCFF;
+    color: white;
+}
+.dialog {
+    border: 1px solid #666666;
+    color: #666666;
+    font-size: 14px;
+    list-style: none outside none;
+    text-align: left;
+    width: 360px;
+}
+.dialog .head {
+    background: url("../images/bg_flttit.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #FFFFFF;
+    color: #323232;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 15px;
+    position: relative;
+}
+.dialog .close {
+    background: url("../images/icon_close.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 10px;
+    position: absolute;
+    right: 12px;
+    top: 11px;
+    width: 10px;
+}
+.dialog .body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 0 16px 20px;
+}
+.dialog select, .dialog input {
+    vertical-align: middle;
+}
+.dialog table, .dialog th, .dialog td {
+    margin: 0;
+    padding: 0;
+}
+.dialog cite, .dialog em {
+    font-style: normal;
+}
+.freeM_btn {
+    clear: both;
+    font-weight: bold;
+    overflow: hidden;
+}
+.freeM_btn a, .freeM_btn span {
+    background-image: url("../images/btn_flt.png");
+    background-repeat: no-repeat;
+    color: #111111;
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.freeM_btn a:link, .freeM_btn a:visited {
+    background-position: 0 0;
+    padding-left: 18px;
+}
+.freeM_btn a:link span, .freeM_btn a:visited span {
+    background-position: right 0;
+    padding-right: 18px;
+}
+.freeM_btn a:hover {
+    background-position: 0 -30px;
+    padding-left: 18px;
+    text-decoration: none;
+}
+.freeM_btn a:hover span {
+    background-position: right -30px;
+    padding-right: 18px;
+    text-decoration: none;
+}
+.tip_table {
+    font-size: 12px;
+    padding-top: 4px;
+}
+.tipR {
+    color: #CC0000;
+}
+.input_w1 {
+    border: 1px solid #C1C1C1;
+    font-family: verdana;
+    height: 25px;
+    line-height: 25px;
+    width: 171px;
+}
+.input_w2 {
+    border: 1px solid #C1C1C1;
+    float: left;
+    font-family: verdana;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 6px;
+    width: 120px;
+}
+.input_tip {
+    color: #FF0000;
+}
+.userM {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+}
+.login_fail {
+    margin: 0 0 0 40px;
+}
+.login_fail th, .login_fail td {
+    font-size: 12px;
+    font-weight: normal;
+}
+.login_fail .freeM_btn {
+    margin-top: 15px;
+}
+.login_fail .vtop {
+    padding-top: 8px;
+    vertical-align: top;
+}
+.login_fail .visbleheight {
+    height: 14px;
+    line-height: 14px;
+}
+.check_name {
+    font-size: 12px;
+}
+.check_name label {
+    cursor: pointer;
+    padding-right: 10px;
+    vertical-align: -2px;
+}
+.safeTipflt {
+    background-color: #FEFEC1;
+    border: 1px solid #D8CCB4;
+    color: #626667;
+    display: none;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 4px;
+    padding: 3px 15px 3px 18px;
+    width: 192px;
+}
+.regist {
+    text-align: center;
+}
+.regist .text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+}
+.regist .freeM_btn {
+    margin-left: 116px;
+}
+.loginMail {
+    font-size: 14px;
+    padding: 10px 0 0;
+}
+.loginMail .userM {
+    font-size: 16px;
+    line-height: 58px;
+    overflow: hidden;
+    text-align: center;
+}
+.loginMail .freeM_btn {
+    margin-left: 116px;
+}
+.error {
+    left: 180px;
+    position: absolute;
+    top: 150px;
+    width: 420px;
+}
+.timeout h3, .locked h3, .keyerr h3 {
+    color: #710000;
+}
+.timeout p, .locked p {
+    margin: 15px 0;
+}
+.timeout a {
+    color: #205B9E;
+}
+.pendant {
+    background: url("../images/pendant.png") no-repeat scroll 0 0 transparent;
+    display: inline;
+    float: left;
+    height: 172px;
+    margin: -48px 0 0 330px;
+    overflow: hidden;
+    width: 226px;
+}
+.notice {
+    background: url("../images/notice.png") no-repeat scroll 0 0 transparent;
+    display: inline;
+    float: left;
+    height: 187px;
+    margin: -48px 0 0 330px;
+    overflow: hidden;
+    width: 200px;
+}
+.pendant:hover {
+    animation: 1.2s linear 0s normal none infinite rotateOut;
+    cursor: pointer;
+    transform-origin: center top 0;
+}
+.pendant .text {
+    background: url("../images/gold_s.gif") no-repeat scroll left top transparent;
+    color: #333333;
+    display: block;
+    font-family: "微软雅黑","宋体";
+    font-size: 13px;
+    height: 100px;
+    line-height: 24px;
+    margin: 60px 0 0 25px;
+    overflow: hidden;
+    text-indent: 2em;
+    width: 182px;
+}
+.notice .text {
+    color: #333333;
+    display: block;
+    font-family: "微软雅黑","宋体";
+    font-size: 12px;
+    height: 72px;
+    line-height: 24px;
+    margin: 74px 0 0 20px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 2em;
+    width: 156px;
+}
+.pendant .text li, .notice .text li {
+    background: url("../images/icons.png") no-repeat scroll left center transparent;
+    height: 25px;
+    overflow: hidden;
+    padding-left: 9px;
+}
+.pendant .text li, .pendant .text a, .notice .text li, .notice .text a {
+    color: #333333;
+}

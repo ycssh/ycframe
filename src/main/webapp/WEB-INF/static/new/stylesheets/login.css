@@ -1,0 +1,152 @@
+body, p, li, ul{
+	padding: 0;
+	margin: 0;
+}
+ul, li{
+	list-style: none;
+}
+html, body{
+	background: #c2e8e4;
+	height: 100%;
+}
+.main{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.topWrap{
+	width: 100%;
+	height: 60px;
+	background: url(../images/login/topBgLine.png) repeat-x;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.topWrap .topTitle{
+	width: 226px;
+	height: 60px;
+	background: url(../images/login/topBgTitle.png) no-repeat center;
+}
+.mainBody{
+	width:100%;
+	height:100%;
+	min-height: 605px;
+	background: url(../images/login/bgpic.png) no-repeat center 60px #c2e8e4;
+	position: relative;
+	min-width: 420px;
+	font-family: "miscrosoft Yahei", Arial, Verdana, Helvetica;
+}
+.loginWrap{
+	position: absolute;
+	left: 50%;
+	margin-left: -210px;
+	top:40%;
+	margin-top: -170px;
+	width: 420px;
+	height: 352px;
+}
+.loginWrap .loginTitle{
+	width: 300px;
+	height: 30px;
+	margin: 0 auto 13px;
+	background: url(../images/login/loginTitle.png) no-repeat center;
+}
+.loginBox{
+	width: 420px;
+	height: 300px;
+	background: url(../images/login/loginbg.png) no-repeat center;
+}
+.loginForm{
+	padding-top:76px;
+	padding-left: 80px;
+}
+.required{
+	padding: 7px 0;
+	position: relative;
+}
+.required input{
+	width:188px;
+	height: 30px;
+	border:1px solid #e4e4e4;
+	box-shadow: 0px 5px 5px #eeeded inset;
+	border-radius: 3px;
+	vertical-align: middle;
+}
+.required .shortInput{
+	width:90px;
+}
+.required label{
+	font-size: 16px;
+	width: 64px;
+    display: inline-block;
+}
+.checkWrap{
+	display-: none;
+}
+.shortCheckWrap{
+	width: 85px;
+	margin-left: 7px;
+	display: inline-block;
+	height: 32px;
+	border-radius: 3px;
+	background: #fff;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.shortCheckWrap img{
+	width: 100%;
+	height: 100%;
+	border:none;
+}
+.loginBtn{
+	width: 112px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background: #169687;
+	margin:8px 0 0 68px;
+	border:none;
+	box-shadow: 2px 3px 1px #d4d7d7;
+	font-size: 16px;
+}
+.bottomWrap{
+	width: 100%;
+	height: 182px;
+	background: url(../images/login/filmbg.png) repeat-x;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom:15px;
+}
+.bottomWrap ul{
+	height: 120px;
+	margin: 31px 0;
+	width: 2400px;
+}
+.bottomWrap ul li{
+	float: left;
+	width:150px;
+	height: 120px;
+	margin-right: 9px;
+	position: relative;
+}
+.bottomWrap ul li img{
+	width: 150px;
+	height: 120px;
+	border:none;
+}
+.bottomWrap ul li .info{
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #fff;
+	background: #000;
+	opacity: .6;
+	left: 0;
+	bottom: 0;
+	text-indent: 12px;
+}

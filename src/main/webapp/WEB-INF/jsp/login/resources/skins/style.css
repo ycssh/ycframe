@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, select, button, textarea, iframe, frameset, table, th, tr, td, fieldset{ margin: 0; padding: 0;}
+body{   font-family:"宋体"; font-size:12px; color:#033; border:none;}
+#htmlContainer{background: #228177;}
+#htmlContainerLogin{background:url(images/bg_login.png) 0 89px repeat-x #228177;}
+#headerlogin{ background:#eee; height:89px; border-bottom:#006E62 solid 3px; padding:0 36px; min-width:560px}
+#mainlogin{ background:url(images/dw_login.jpg) center top no-repeat; min-height:526px;_height:440px; padding-top:88px;}
+#footerlogin{ font-family:Arial, Helvetica, sans-serif; line-height:20px; color:#D4E7E5; width:900px; text-align:center; margin:0 auto}
+
+#logologin{ float:left; padding-top:6px;}
+#sgtclogin{ float:right;padding:8px 16px 0 0;}
+#login_formlogin{ background:url(images/bg_form.png) left top no-repeat; width:521px; height:327px; margin:0 auto; position:relative}
+#form_listlogin{ width:179px; height:132px; position:absolute; top:30px; left:338px}
+#form_listlogin p{ height:34px; padding-left:22px;margin:12px 0;}
+#form_listlogin .btn{ padding:0;}
+#userNameText{ font-family:Arial;color:#033; border:#003300 solid 1px; padding:0px; font-size:14px;vertical-align: middle ; margin-top: 17px;}
+#userNameText input,#passwordText input{height: 27px;}
+#passwordText{ font-family:Arial;color:#033; border:#003300 solid 1px; padding:0px; font-size:14px;vertical-align: middle;margin-top: 17px;}
+#posterlogin{ position:absolute; left:14px; bottom:14px; width:260px; height:98px; top:200px;}
+#buttonlogin{background: url("images/loign_btn.gif");margin-top: 17px;}

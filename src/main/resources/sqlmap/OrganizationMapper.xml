@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.yc.ssh.admin.base.mybatis.mapper.OrganizationMapper" >
+  <resultMap id="BaseResultMap" type="cn.yc.ssh.admin.base.mybatis.model.Organization" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PARENTID" property="parentId" jdbcType="DECIMAL" />
+    <result column="POWER" property="power" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, PARENTID, POWER
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_ORGANIZATION
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <select id="findByPID" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_ORGANIZATION
+    where PARENTID = #{id,jdbcType=DECIMAL}
+  </select>
+  <select id="findByParent" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_ORGANIZATION
+    where parentID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from SYS_ORGANIZATION
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="cn.yc.ssh.admin.base.mybatis.model.Organization" >
+ 	 <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id"> 
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    insert into SYS_ORGANIZATION (id, NAME, PARENTID, 
+      POWER)
+    values (#{id,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=DECIMAL}, 
+      #{power,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.Organization" >
+    insert into SYS_ORGANIZATION
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="parentId != null" >
+        PARENTID,
+      </if>
+      <if test="power != null" >
+        POWER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=DECIMAL},
+      </if>
+      <if test="power != null" >
+        #{power,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.yc.ssh.admin.base.mybatis.model.Organization" >
+    update SYS_ORGANIZATION
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        PARENTID = #{parentId,jdbcType=DECIMAL},
+      </if>
+      <if test="power != null" >
+        POWER = #{power,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.yc.ssh.admin.base.mybatis.model.Organization" >
+    update SYS_ORGANIZATION
+    set NAME = #{name,jdbcType=VARCHAR},
+      PARENTID = #{parentId,jdbcType=DECIMAL},
+      POWER = #{power,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
